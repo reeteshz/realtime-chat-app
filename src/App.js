@@ -22,7 +22,7 @@ class App extends React.Component {
   componentDidMount() {
     this.socket = io(config[process.env.NODE_ENV].endpoint);
 
-    // Load the last 10 messages in the window.
+
     this.socket.on('init', (msg) => {
       let msgReversed = msg.reverse();
       this.setState((state) => ({
@@ -30,7 +30,7 @@ class App extends React.Component {
       }), this.scrollToBottom);
     });
 
-    // Update the chat if a new message is broadcasted.
+
     this.socket.on('push', (msg) => {
       this.setState((state) => ({
         chat: [...state.chat, msg],
@@ -38,7 +38,7 @@ class App extends React.Component {
     });
   }
 
-  // Save the message the user is typing in the input field.
+
   handleContent(event) {
     this.setState({
       content: event.target.value,
@@ -53,17 +53,17 @@ class App extends React.Component {
   }
 
   handleSubmit(event) {
-    // Prevent the form to reload the current page.
+
     event.preventDefault();
 
-    // Send the new message to the server.
+
     this.socket.emit('message', {
       name: this.state.name,
       content: this.state.content,
     });
 
     this.setState((state) => {
-      // Update the chat with the user's message and remove the current message.
+
       return {
         chat: [...state.chat, {
           name: state.name,
@@ -74,7 +74,7 @@ class App extends React.Component {
     }, this.scrollToBottom);
   }
 
-  // Always make sure the window is scrolled down to the last message.
+
   scrollToBottom() {
     const chat = document.getElementById('chat');
     chat.scrollTop = chat.scrollHeight;
