@@ -1,0 +1,26 @@
+{
+  "name": "realtime-chat-app",
+  "version": "1.0.0",
+  "description": "Realtime Chat App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reeteshz/realtime-chat-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reeteshz/realtime-chat-app/issues"
+  },
+  "homepage": "https://github.com/reeteshz/realtime-chat-app#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "luxon": "^2.3.1",
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0"
+  }
+}
